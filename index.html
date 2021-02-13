@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+    <style>
+      @keyframes new-item-animation {
+        from {
+          box-shadow: 0 0 16px 10px green;
+        }
+        to {
+          box-shadow: 0 0 0 0 transparent;
+        }
+      }
+
+      .card {
+        height: 300px;
+        border-radius: 10px;
+        background-color: red;
+        animation: new-item-animation 1s ease-in;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Restart CSS Animation with pure HTML</h1>
+    <button onclick="renew()">Renew</button>
+    <div class="card"></div>
+    <script>
+      function renew() {
+        const oldCard = document.querySelector(".card");
+        const newCard = oldCard.cloneNode();
+        oldCard.remove();
+        document.body.appendChild(newCard);
+      }
+    </script>
+  </body>
+</html>
